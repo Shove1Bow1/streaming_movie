@@ -16,7 +16,7 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class searcnview extends AppCompatActivity {
+public class searchview extends AppCompatActivity {
     RecyclerView recyclerView;
     SearchView searchView;
     ArrayList<FilmClass> film_object;

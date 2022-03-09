@@ -38,7 +38,7 @@ public class PhoneLoginActivity extends AppCompatActivity {
     Button btnGetCode,btnSendCode;
     FirebaseAuth auth=FirebaseAuth.getInstance();
     String verificationId;
-    CardView cvUserLogin,cvGoogleLogin;
+    CardView cvUserLogin,cvGoogleLogin,cvBtnGetCode;
     GoogleSignInClient mGoogleSignInClient;
     TextView tvSignUp;
     int RC_SIGN_IN=123;
@@ -53,10 +53,18 @@ public class PhoneLoginActivity extends AppCompatActivity {
 //        btnSendCode=findViewById(R.id.btnSendCode);
         cvUserLogin = findViewById(R.id.cvUser_PhoneLoginActivity);
         cvGoogleLogin = findViewById(R.id.cvGoogle_PhoneLoginActivity);
+        cvBtnGetCode=findViewById(R.id.cvBtnGetCode);
         tvSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getBaseContext(), SignUpActivity.class));
+            }
+        });
+        cvBtnGetCode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(PhoneLoginActivity.this,OTPActivity.class);
+                startActivity(intent);
             }
         });
         cvUserLogin.setOnClickListener(new View.OnClickListener() {

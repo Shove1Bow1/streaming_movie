@@ -22,7 +22,7 @@
             android:name=".detail"
             android:exported="false" />
         <activity
-            android:name=".searcnview"
+            android:name=".searchview"
             android:exported="false" />
         <activity
             android:name=".Main"

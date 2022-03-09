@@ -2,10 +2,9 @@ package com.example.app_movie;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-import android.animation.TimeInterpolator;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -32,7 +31,7 @@ public class Main extends AppCompatActivity {
         view_item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getBaseContext(),searcnview.class);
+                Intent intent = new Intent(getBaseContext(), searchview.class);
                 startActivity(intent);
             }
         });
