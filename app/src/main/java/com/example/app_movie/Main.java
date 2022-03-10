@@ -35,6 +35,7 @@ public class Main extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
     BottomNavigationView.OnNavigationItemSelectedListener onNavigationItemSelectedListener=new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
