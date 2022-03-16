@@ -4,12 +4,15 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.ContentResolver;
 import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -69,6 +72,8 @@ public class play_film extends AppCompatActivity {
                 countdownhide();
             }
         });
+
+
         volume.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -92,6 +97,7 @@ public class play_film extends AppCompatActivity {
                 }
 
             }
+
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
 
@@ -178,6 +184,37 @@ public class play_film extends AppCompatActivity {
                 } else {
                     Log.d("firebase", "get failed with ", task.getException());
                 }
+            }
+        });
+
+
+//        try {
+//            view.setVideoPath(downloadUrl("https://drive.google.com/file/d/1PVni18FFqws9cvY7eornVhGCvJdTOhxy/view?usp=sharing"));
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+
+        view.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                video_seekbar.setMax(view.getDuration());
+                view.start();
+            }
+        });
+        video_seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                view.seekTo(seekBar.getProgress());
             }
         });
         foward.setOnClickListener(new View.OnClickListener() {
@@ -300,4 +337,5 @@ public class play_film extends AppCompatActivity {
             }
         }.start();
     }
+
 }

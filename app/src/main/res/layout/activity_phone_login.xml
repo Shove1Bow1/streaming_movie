@@ -28,7 +28,8 @@
         app:cardCornerRadius="80dp"
         app:layout_constraintTop_toBottomOf="@id/ipPhoneNo"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent">
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:id="@+id/cvBtnGetOTP">
         <Button
             android:layout_width="250dp"
             android:id="@+id/btnGetOTP"
@@ -68,19 +69,19 @@
         android:textSize="16dp"
         android:textColor="@color/word"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cvBtnGetCode" />
+        app:layout_constraintTop_toBottomOf="@+id/cvBtnGetOTP" />
 
     <TextView
         android:id="@+id/tvSignUp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="70dp"
+        android:layout_height="31dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="24dp"
         android:text="Sign up"
         android:textColor="@color/word_button"
         android:textSize="20dp"
         app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/cvBtnGetCode" />
+        app:layout_constraintTop_toBottomOf="@+id/cvBtnGetOTP" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvGoogle_PhoneLoginActivity"
