@@ -1,6 +1,8 @@
 package com.example.app_movie;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -42,13 +44,18 @@ public class adapter_search extends RecyclerView.Adapter<adapter_search.ViewHold
         holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent=new Intent(context,detail.class);
+                intent.putExtra("infor", film_object);
+                context.startActivity(intent);
             }
         });
         holder.imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent=new Intent(context,play_film.class);
+                intent.putExtra("name", film_object.getName());
+                intent.putExtra("url",film_object.getUrlfilm());
+                context.startActivity(intent);
             }
         });
     }
