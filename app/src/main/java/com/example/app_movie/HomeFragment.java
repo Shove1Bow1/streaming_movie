@@ -34,7 +34,7 @@ FirebaseFirestore firebaseFirestore;
 ArrayList<FilmClass>fo;
 film_adapter film_adapter;
 ClipData.Item item;
-RecyclerView recyclerView;
+RecyclerView recyclerView1,getRecyclerView2,recyclerView3;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -46,7 +46,7 @@ RecyclerView recyclerView;
 // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
         fo=new ArrayList<>();
-        recyclerView=view.findViewById(R.id.list_all);
+        recyclerView1=view.findViewById(R.id.list_all);
 
         firebaseFirestore = FirebaseFirestore.getInstance();
         firebaseFirestore.collection("Flim")
@@ -79,8 +79,8 @@ RecyclerView recyclerView;
                             prefsEditor.commit();
                             LinearLayoutManager llm = new LinearLayoutManager(getContext());
                             llm.setOrientation(LinearLayoutManager.HORIZONTAL);
-                            recyclerView.setLayoutManager(llm);
-                            recyclerView.setAdapter( film_adapter );
+                            recyclerView1.setLayoutManager(llm);
+                            recyclerView1.setAdapter( film_adapter );
                         } else {
                         }
                     }
