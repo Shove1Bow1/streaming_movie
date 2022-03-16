@@ -56,14 +56,17 @@ RecyclerView recyclerView;
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
-
+                                String url_film= (String) document.getData().get("url_film");
                                 String name= (String) document.getData().get("name");
                                 String description = (String) document.getData().get("description");
                                 String url= (String) document.getData().get("url");
                                 List<String> genre = (List) document.getData().get("genre");
                                 List<String> director = (List) document.getData().get("director");
                                 Log.d("Testdata", document.getId() + " => " +url);
-                                FilmClass film_class =new FilmClass(director,genre,name,description,url);
+                                FilmClass film_class =new FilmClass(director,genre,name,description,url,url_film);
+                                Log.e("checkurl",url_film+"");
+
+
                                 fo.add(film_class);
                                 Log.e("count",fo.get(0).getUrl_img()+"");
                             }
