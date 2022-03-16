@@ -38,7 +38,7 @@ public class UserLoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         auth=FirebaseAuth.getInstance();
         if (auth.getCurrentUser()!=null){
-            loadUi(auth.getUid());
+            loadUi();
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
@@ -72,7 +72,7 @@ public class UserLoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (ipEmail.getText().toString()!=""&& ipPassword.getText().toString()!=""|| ipPassword.getText().toString()!=""|| ipEmail.getText().toString()!=""){
+                if (ipEmail.getText().toString().isEmpty()&& ipPassword.getText().toString().isEmpty()|| ipPassword.getText().toString().isEmpty()|| ipEmail.getText().toString().isEmpty()){
                     Toast.makeText(getBaseContext(), "Enter",
                             Toast.LENGTH_SHORT).show();
                 }
@@ -87,7 +87,7 @@ public class UserLoginActivity extends AppCompatActivity {
                                 FirebaseUser user = auth.getCurrentUser();
                                 Toast.makeText(getBaseContext(), "sucess.",
                                         Toast.LENGTH_SHORT).show();
-                                loadUi(auth.getUid());
+                                loadUi();
                             } else {
                                 // If sign in fails, display a message to the user.
                                 Toast.makeText(getBaseContext(), "Authentication failed.",
@@ -130,7 +130,7 @@ public class UserLoginActivity extends AppCompatActivity {
             }
         }
     }
-    void loadUi(String id){
+    void loadUi(){
         Intent intent=new Intent(getBaseContext(),Main.class);
         startActivity(intent);
         finish();
@@ -146,7 +146,7 @@ public class UserLoginActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("checl", "signInWithCredential:success");
                             FirebaseUser user = auth.getCurrentUser();
-                            loadUi(auth.getUid());
+                            loadUi();
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w("check", "signInWithCredential:failure", task.getException());

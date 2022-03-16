@@ -33,6 +33,7 @@ public class play_film extends AppCompatActivity {
     SeekBar video_seekbar, brightness, volume;
     TextView timing,title;
     VideoView view;
+    ImageButton back;
     AudioManager audioManager;
     int i = 0;
     ImageView volume_view, bright_view;
@@ -48,6 +49,7 @@ public class play_film extends AppCompatActivity {
         foward = findViewById(R.id.videoView_forward);
         rewind = findViewById(R.id.videoView_rewind);
         volume = findViewById(R.id.videoView_vollum);
+        back=findViewById(R.id.videoView_go_back);
         audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
         volume_view = findViewById(R.id.videoView_vollum_image);
         bright_view = findViewById(R.id.videoView_brightness_image);
@@ -73,7 +75,12 @@ public class play_film extends AppCompatActivity {
             }
         });
 
-
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         volume.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
