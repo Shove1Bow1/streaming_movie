@@ -3,10 +3,11 @@ package com.example.app_movie;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
-
+import java.io.File;
 import android.content.ContentResolver;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -66,7 +67,8 @@ public class play_film extends AppCompatActivity {
         volume.setProgress(volumelevel);
         countdownhide();
         title.setText(getIntent().getExtras().getString("name"));
-        view.setVideoPath(getIntent().getExtras().getString("url"));
+        Uri uri= Uri.parse(getIntent().getExtras().getString("url"));
+        view.setVideoURI(uri);
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

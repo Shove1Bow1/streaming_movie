@@ -62,8 +62,9 @@ RecyclerView recyclerView1,getRecyclerView2,recyclerView3;
                                 String url= (String) document.getData().get("url");
                                 List<String> genre = (List) document.getData().get("genre");
                                 List<String> director = (List) document.getData().get("director");
+                                List<String> actor=(List) document.getData().get("actor");
                                 Log.d("Testdata", document.getId() + " => " +url);
-                                FilmClass film_class =new FilmClass(director,genre,name,description,url,url_film);
+                                FilmClass film_class =new FilmClass(name,director,actor,genre,description,url,url_film);
                                 Log.e("checkurl",url_film+"");
 
 

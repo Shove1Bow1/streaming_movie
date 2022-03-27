@@ -1,6 +1,8 @@
 package com.example.app_movie;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,9 +23,11 @@ public class DownloadAdapterFragment extends RecyclerView.Adapter<DownloadAdapte
 
     private ArrayList<FilmClass> filmClassArrayList;
     private Context context;
-    public DownloadAdapterFragment(ArrayList<FilmClass> filmClassArrayList,Context context){
+    private onClick onClickGetDetail;
+    public DownloadAdapterFragment(ArrayList<FilmClass> filmClassArrayList,Context context,onClick onClickGetDetail){
         this.filmClassArrayList=filmClassArrayList;
         this.context=context;
+        this.onClickGetDetail=onClickGetDetail;
     }
     @NonNull
     @Override
@@ -35,12 +39,21 @@ public class DownloadAdapterFragment extends RecyclerView.Adapter<DownloadAdapte
     @Override
     public void onBindViewHolder(@NonNull DownloadHolder holder, int position) {
         FilmClass film=filmClassArrayList.get(position);
-        Glide.with(context).load(film.getUrl_img()).into(holder.imgView_ItemDownload);
-        holder.tvPlot.setText(film.description);
+        Bitmap bitmap= BitmapFactory.decodeFile(film.getUrl_img());
+        holder.imgView_ItemDownload.setImageBitmap(bitmap);
+        holder.tvPlot.setText(film.getDescription());
         holder.tvTitle.setText(film.name);
-        holder.rcGenre_itemDownload.setLayoutManager(new LinearLayoutManager(context));
-        holder.genreAdapter=new GenreAdapter(film.genre,context);
+        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(context);
+        linearLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
+        holder.rcGenre_itemDownload.setLayoutManager(linearLayoutManager);
+        holder.genreAdapter=new GenreAdapter(film.getGenre(),context);
         holder.rcGenre_itemDownload.setAdapter(holder.genreAdapter);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onClickGetDetail.onClickList(film);
+            }
+        });
     }
 
     @Override
@@ -60,5 +73,8 @@ public class DownloadAdapterFragment extends RecyclerView.Adapter<DownloadAdapte
             tvPlot=itemView.findViewById(R.id.tvPlot_itemDownload);
             rcGenre_itemDownload=itemView.findViewById(R.id.rvGenre_itemDownload);
         }
+    }
+    public interface onClick{
+        public void onClickList(FilmClass filmClass);
     }
 }
