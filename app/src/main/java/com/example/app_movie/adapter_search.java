@@ -27,7 +27,13 @@ public class adapter_search extends RecyclerView.Adapter<adapter_search.ViewHold
         this.films = films;
         this.context = context;
     }
-
+    public void clear(){
+        films.clear();
+        notifyDataSetChanged();
+    }
+    public void addlist(ArrayList<FilmClass> films){
+        this.films=films;
+    }
     @NonNull
     @Override
     public adapter_search.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -39,7 +45,6 @@ public class adapter_search extends RecyclerView.Adapter<adapter_search.ViewHold
     public void onBindViewHolder(@NonNull adapter_search.ViewHolder holder, int position) {
        FilmClass film_object= films.get(position);
         Glide.with(context).load(film_object.getUrl_img()).into(holder.imageView);
-        Log.e("search",film_object.getName());
         holder.textView.setText(film_object.getName());
         holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -25,6 +25,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class UserLoginActivity extends AppCompatActivity {
     TextInputEditText ipEmail, ipPassword;
@@ -38,7 +41,7 @@ public class UserLoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         auth=FirebaseAuth.getInstance();
         if (auth.getCurrentUser()!=null){
-            loadUi();
+         checkdocumen(auth.getCurrentUser());
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
@@ -87,7 +90,7 @@ public class UserLoginActivity extends AppCompatActivity {
                                 FirebaseUser user = auth.getCurrentUser();
                                 Toast.makeText(getBaseContext(), "sucess.",
                                         Toast.LENGTH_SHORT).show();
-                                loadUi();
+                                checkdocumen(user);
                             } else {
                                 // If sign in fails, display a message to the user.
                                 Toast.makeText(getBaseContext(), "Authentication failed.",
@@ -130,8 +133,33 @@ public class UserLoginActivity extends AppCompatActivity {
             }
         }
     }
-    void loadUi(){
-        Intent intent=new Intent(getBaseContext(),Main.class);
+    private void checkdocumen(FirebaseUser user){
+        FirebaseFirestore rootRef = FirebaseFirestore.getInstance();
+        Boolean check=false;
+        DocumentReference docIdRef = rootRef.collection("User").document(user.getUid());
+        docIdRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        loadUi(1);
+                    } else {
+                        loadUi(0);
+                    }
+                } else {
+                }
+            }
+        });
+    }
+    void loadUi(int i){
+        Intent intent;
+        if (i==0){
+            intent=new Intent(getBaseContext(),AddUserInfo.class);
+        }
+        else{
+            intent =new Intent(getBaseContext(),Main.class);
+        }
         startActivity(intent);
         finish();
     }
@@ -146,7 +174,7 @@ public class UserLoginActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("checl", "signInWithCredential:success");
                             FirebaseUser user = auth.getCurrentUser();
-                            loadUi();
+                            checkdocumen(user);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w("check", "signInWithCredential:failure", task.getException());

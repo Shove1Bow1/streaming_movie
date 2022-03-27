@@ -6,7 +6,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.SearchView;
 
 import com.google.gson.Gson;
@@ -20,6 +24,7 @@ public class searchview extends AppCompatActivity {
     RecyclerView recyclerView;
     SearchView searchView;
     ArrayList<FilmClass> film_object;
+    adapter_search film_adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +39,44 @@ public class searchview extends AppCompatActivity {
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(llm);
-       adapter_search film_adapter=new adapter_search(film_object,this);
+         film_adapter =new adapter_search(film_object,this);
         recyclerView.setAdapter( film_adapter );
+        searchView.setIconifiedByDefault(true);
+        searchView.setFocusable(true);
+        searchView.setIconified(false);
+        searchView.requestFocusFromTouch();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                search(newText); return false;
+            }
+        });
+    }
+    public void hideSoftKeyboard(View view){
+        InputMethodManager imm
+                =(InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
+    private void search(String textSearch){
+
+        ArrayList<FilmClass> searchList = new ArrayList<>();
+        if (searchList.size()>0){
+            film_adapter.clear();
+        }
+        for (FilmClass furniture:film_object){
+            Log.e("search",""+furniture.name);
+            if (furniture.name.toLowerCase().contains(textSearch.toLowerCase())){
+                searchList.add(furniture);
+            }
+
+        }
+        film_adapter.addlist(searchList);
+        film_adapter.notifyDataSetChanged();
+
     }
 }

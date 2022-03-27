@@ -82,7 +82,7 @@ public class FilmClass implements Serializable {
         this.urlfilm = urlfilm;
     }
 
-    public FilmClass(List<String>director, List<String> genre, String name, String description, String url_img,String url_film)
+    public FilmClass(List<String>director, List<String> genre, String name, String description, String url_img,String url_film,List<String> Actor)
     {
         this.description=description;
         this.director=director;
@@ -90,6 +90,7 @@ public class FilmClass implements Serializable {
         this.name=name;
         this.url_img=url_img;
         this.urlfilm=url_film;
+        this.actor=Actor;
     }
     public FilmClass(String name,List<String >director,List<String> actor,List<String>genre,String description,String url_img, String url_film){
         this.description=description;

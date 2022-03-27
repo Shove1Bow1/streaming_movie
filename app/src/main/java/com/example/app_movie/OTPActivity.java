@@ -21,9 +21,13 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -148,13 +152,43 @@ public class OTPActivity<Intrinics> extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-                    Toast.makeText(OTPActivity.this, "UserLoginActivity success", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(OTPActivity.this, Main.class));
+                    checkdocumen(firebaseAuth.getCurrentUser());
+                    ;
                 }
             }
         });
     }
     //fill number
+    private void checkdocumen(FirebaseUser user){
+        FirebaseFirestore rootRef = FirebaseFirestore.getInstance();
+        Boolean check=false;
+        DocumentReference docIdRef = rootRef.collection("User").document(user.getUid());
+        docIdRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        loadUi(1);
+                    } else {
+                        loadUi(0);
+                    }
+                } else {
+                }
+            }
+        });
+    }
+    void loadUi(int i){
+        Intent intent;
+        if (i==0){
+            intent=new Intent(getBaseContext(),AddUserInfo.class);
+        }
+        else{
+            intent =new Intent(getBaseContext(),Main.class);
+        }
+        startActivity(intent);
+        finish();
+    }
     private void keyPress(){
         otp_1.addTextChangedListener(new GenericTextWatcher(otp_1));
         otp_2.addTextChangedListener(new GenericTextWatcher(otp_2));
