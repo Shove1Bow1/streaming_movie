@@ -1,11 +1,13 @@
 package com.example.app_movie;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -37,7 +39,15 @@ public class film_adapter extends RecyclerView.Adapter<film_adapter.ViewHolder> 
         FilmClass film_class =films.get(position);
         Log.e("run",""+ film_class.getUrl_img());
         Glide.with(context).load(film_class.getUrl_img()).into(holder.imgview);
-
+        holder.textView.setText(film_class.getName());
+        holder.imgview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(context,detail.class);
+                intent.putExtra("infor", film_class);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -46,9 +56,11 @@ public class film_adapter extends RecyclerView.Adapter<film_adapter.ViewHolder> 
     }
     public class ViewHolder extends RecyclerView.ViewHolder{
         ImageView imgview;
+        TextView textView;
         public ViewHolder(@NonNull View view){
             super(view);
            imgview=view.findViewById(R.id.view_film);
+           textView=view.findViewById(R.id.txtTitle_itemFilm);
         }
     }
 }

@@ -16,16 +16,19 @@
         android:src="@drawable/ic_person"
         android:id="@+id/imgSetAvatar"
         />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvUserName"
-        app:layout_constraintLeft_toRightOf="@id/imgSetAvatar"
-        android:text="This is Your NickName"
-        android:textSize="22sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        />
+
+        <TextView
+            android:id="@+id/tvUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:text="This is Your NickName"
+            android:textSize="22sp"
+            app:layout_constraintHorizontal_bias="0.764"
+            app:layout_constraintLeft_toRightOf="@id/imgSetAvatar"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="50dp"
