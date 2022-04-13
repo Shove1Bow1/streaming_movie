@@ -76,7 +76,7 @@ public class DBStorageDMovie {
    public ArrayList<FilmClass> getAllMovieList(){
        SQLiteDatabase sqLiteDatabase = openDB();
        ArrayList<FilmClass> filmClassArrayList = new ArrayList<>();
-       String sql = "Select * from \""+dbName+"\"";
+       String sql = "Select * from "+dbName;
        Cursor cursor = sqLiteDatabase.rawQuery(sql, null);
        if (cursor != null) {
            while (cursor.moveToNext()) {
@@ -96,21 +96,29 @@ public class DBStorageDMovie {
    }
    public boolean checkExistInDownloadFolder(String name){
        SQLiteDatabase database=openDB();
-       String query="Select Name from "+dbName+" where Name = '"+name+"'";
-       Cursor cursor=database.rawQuery(query,null);
+       String query="Select Name from "+dbName;
+       Cursor cursor=database.rawQuery(query,null,null);
        if(cursor!=null){
-           return true;
+           Log.d("tag", "checkExistInDownloadFolder: "+name);
+
+
+           while (cursor.moveToNext()){
+               if(name.compareTo(cursor.getString(0))==0){
+                   closeDB(database);
+                   return true;
+               }
+           }
+
        }
+       closeDB(database);
        return false;
    }
    public void removeDownload(String name,File Img,File Video){
        SQLiteDatabase db=openDB();
-       if(checkExistInDownloadFolder(name)){
            String sql="delete from "+dbName+" where Name='"+name+"'";
            db.execSQL(sql);
            Img.delete();
            Video.delete();
            Toast.makeText(context,"File has been deleted",Toast.LENGTH_SHORT).show();
-       }
    }
 }

@@ -82,7 +82,7 @@ public class detail extends AppCompatActivity {
     private void startDownloading(String Url, String Url_Image){
         String filmURL=Url;
         String imgURL=Url_Image;
-        if(sqLiteDatabase.checkExistInDownloadFolder(filmClass.getName())==true){
+        if(sqLiteDatabase.checkExistInDownloadFolder(filmClass.getName())==false){
             DownloadManager.Request request=new DownloadManager.Request(Uri.parse(filmURL));
             DownloadManager.Request request2=new DownloadManager.Request(Uri.parse(imgURL));
             request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI| DownloadManager.Request.NETWORK_MOBILE);
