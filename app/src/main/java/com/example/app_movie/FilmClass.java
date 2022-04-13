@@ -10,6 +10,16 @@ public class FilmClass implements Serializable {
     public String name;
     private String url_img;
     private String urlfilm;
+    private String uri;
+
+    public String getUri() {
+        return uri;
+    }
+
+    public void setUri(String uri) {
+        this.uri = uri;
+    }
+
     private List<String> actor;
     private List<String> director;
     private String description;
@@ -92,7 +102,7 @@ public class FilmClass implements Serializable {
         this.urlfilm=url_film;
         this.actor=Actor;
     }
-    public FilmClass(String name,List<String >director,List<String> actor,List<String>genre,String description,String url_img, String url_film){
+    public FilmClass(String name,List<String >director,List<String> actor,List<String>genre,String description,String url_img, String url_film,String uri){
         this.description=description;
         this.director=director;
         this.genre=genre;
@@ -100,5 +110,6 @@ public class FilmClass implements Serializable {
         this.url_img=url_img;
         this.urlfilm=url_film;
         this.actor=actor;
+        this.uri=uri;
     }
 }

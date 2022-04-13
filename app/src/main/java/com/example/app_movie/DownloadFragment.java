@@ -7,10 +7,12 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
+import java.io.File;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -48,6 +50,7 @@ public class DownloadFragment extends Fragment implements DownloadAdapterFragmen
         LinearLayoutManager linearLayout=new LinearLayoutManager(getContext());
         linearLayout.setOrientation(RecyclerView.VERTICAL);
         rcDownload.setLayoutManager(linearLayout);
+        new ItemTouchHelper(itemTouchHelperCallback).attachToRecyclerView(rcDownload);
         rcDownload.setAdapter(downloadAdapterFragment);
     }
 
@@ -57,4 +60,26 @@ public class DownloadFragment extends Fragment implements DownloadAdapterFragmen
         intent.putExtra("infor",filmClass);
         startActivity(intent);
     }
+    ItemTouchHelper.SimpleCallback itemTouchHelperCallback=new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT) {
+        @Override
+        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+            return false;
+        }
+
+        @Override
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+            int i=viewHolder.getAdapterPosition();
+            FilmClass film=filmClassArrayList.get(i);
+            File file=new File(film.getUrl_img());
+            File file1=new File(film.getUrlfilm());
+            sqLiteDatabase.removeDownload(film.getName(),file,file1);
+
+            Log.d("yo", "onSwiped: "+filmClassArrayList.get(i).name);
+            filmClassArrayList.remove(viewHolder.getAdapterPosition());
+            downloadAdapterFragment.notifyDataSetChanged();
+
+
+
+        }
+    };
 }

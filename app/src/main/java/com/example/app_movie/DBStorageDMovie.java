@@ -36,20 +36,20 @@ public class DBStorageDMovie {
                "Actor Text, " +
                "Genre text, "+
                "Description Text, "+
+               "UriLocal Text, "+
                "ImageUrl Text, " +
                "FilmUrl Text);";
        db.execSQL(sqlFavorite);
        closeDB(db);
    }
-   public void insertDownloadInfo(FilmClass filmClass,File getUriImage,File getUriVideo){
+   public void insertDownloadInfo(FilmClass filmClass,File getUriImage,File getUriVideo,File uriLocal){
        ContentValues contentValues=new ContentValues();
        contentValues.put("Name",filmClass.getName());
-
        contentValues.put("Director",convertArrayToString(filmClass.getDirector()));
-       Log.d("yo", "insertDownloadInfo: "+filmClass.getActor());
        contentValues.put("Actor",convertArrayToString(filmClass.getActor()));
        contentValues.put("Genre",convertArrayToString(filmClass.getGenre()));
        contentValues.put("Description",filmClass.getDescription());
+       contentValues.put("UriLocal",uriLocal.getPath());
        contentValues.put("ImageUrl",getUriImage.getPath());
        contentValues.put("FilmUrl",getUriVideo.getPath());
        SQLiteDatabase db=openDB();
@@ -85,9 +85,10 @@ public class DBStorageDMovie {
                 List<String> actor=convertStringToArray(cursor.getString(3));
                 List<String> genre=convertStringToArray(cursor.getString(4));
                 String description=cursor.getString(5);
-                String imgUrl=cursor.getString(6);
-                String videoUrl=cursor.getString(7);
-                filmClassArrayList.add(new FilmClass(name,director,actor,genre,description,imgUrl,videoUrl));
+                String uriLocal=cursor.getString(6);
+                String imgUrl=cursor.getString(7);
+                String videoUrl=cursor.getString(8);
+                filmClassArrayList.add(new FilmClass(name,director,actor,genre,description,imgUrl,videoUrl,uriLocal));
            }
        }
        closeDB(sqLiteDatabase);
@@ -102,12 +103,13 @@ public class DBStorageDMovie {
        }
        return false;
    }
-   public void removeDownload(String name,File uriFile){
+   public void removeDownload(String name,File Img,File Video){
        SQLiteDatabase db=openDB();
        if(checkExistInDownloadFolder(name)){
-           String sql="delete from "+dbName+"where Name='"+name+"'";
+           String sql="delete from "+dbName+" where Name='"+name+"'";
            db.execSQL(sql);
-           uriFile.delete();
+           Img.delete();
+           Video.delete();
            Toast.makeText(context,"File has been deleted",Toast.LENGTH_SHORT).show();
        }
    }

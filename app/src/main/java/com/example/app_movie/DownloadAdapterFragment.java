@@ -72,6 +72,7 @@ public class DownloadAdapterFragment extends RecyclerView.Adapter<DownloadAdapte
             tvTitle=itemView.findViewById(R.id.tvTitle_itemDownload);
             tvPlot=itemView.findViewById(R.id.tvPlot_itemDownload);
             rcGenre_itemDownload=itemView.findViewById(R.id.rvGenre_itemDownload);
+
         }
     }
     public interface onClick{

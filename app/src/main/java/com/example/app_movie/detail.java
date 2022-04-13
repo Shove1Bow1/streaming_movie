@@ -32,7 +32,7 @@ public class detail extends AppCompatActivity {
     Button play,download;
     FilmClass filmClass;
     DBStorageDMovie sqLiteDatabase;
-    File fileUriImg,fileUriVideo;
+    File fileUriImg,fileUriVideo,UriLocal;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,7 +98,8 @@ public class detail extends AppCompatActivity {
             File file=new File(getExternalFilesDir(null)+"/"+title.getText().toString());
             if(!file.exists())
                 file.mkdir();
-            file=new File(getExternalFilesDir(null)+"/"+title.getText().toString()+"/"+title.getText().toString()+".jpg");
+            UriLocal=file;
+            file=new File(getExternalFilesDir(null)+"/"+title.getText().toString()+"/"+"Bloody.jpg");
             fileUriImg=file;
             Uri uri_Img=Uri.fromFile(file);
             request2.setDestinationUri(uri_Img);
@@ -109,7 +110,7 @@ public class detail extends AppCompatActivity {
             DownloadManager manager=(DownloadManager)getSystemService(Context.DOWNLOAD_SERVICE);
             manager.enqueue(request);
             manager.enqueue(request2);
-            sqLiteDatabase.insertDownloadInfo(filmClass,fileUriImg,fileUriVideo);
+            sqLiteDatabase.insertDownloadInfo(filmClass,fileUriImg,fileUriVideo,UriLocal);
         }
         else{
             Toast.makeText(detail.this,"This movie has been downloaded",Toast.LENGTH_SHORT).show();
