@@ -3,6 +3,7 @@ package com.example.app_movie;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -42,6 +43,8 @@ public class AddUserInfo extends AppCompatActivity {
                 String a= FirebaseAuth.getInstance().getCurrentUser().getUid();
 // Add a new document with a generated ID
                 db.collection("User").document(a).set(user);
+                Intent b=new Intent(getBaseContext(),Main.class);
+                startActivity(b);
 
             }
         });
