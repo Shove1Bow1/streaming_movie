@@ -15,18 +15,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.NoActionBar">
-<<<<<<< HEAD
 
         <activity android:name=".OTPActivity"
             android:exported="false"/>
-=======
         <activity
             android:name=".AddUserInfo"
             android:exported="false" />
-        <activity
-            android:name=".OTPActivity"
-            android:exported="false" />
->>>>>>> 6f49ca8689011e2276f5f1fbe3bf0d606a8f0e11
         <activity
             android:name=".play_film"
             android:exported="false" />
