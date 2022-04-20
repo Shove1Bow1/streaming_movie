@@ -32,6 +32,7 @@ public class AddUserInfo extends AppCompatActivity {
         sex=findViewById(R.id.sex);
         db=FirebaseFirestore.getInstance();
         click=findViewById(R.id.button_add_infor);
+
         click.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
