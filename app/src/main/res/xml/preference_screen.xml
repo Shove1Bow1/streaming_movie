@@ -1,22 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <ListPreference
-        android:defaultValue="3"
-        android:dialogTitle="Change text size"
+        android:icon="@drawable/format_size"
+        android:defaultValue="1"
+        android:dialogTitle="@string/text_size_content"
         android:entries="@array/text_size"
-        android:key="key_change_text_size"
-        android:entryValues="@array/genre_id"
-        android:title="Change text size"/>
+        app:useSimpleSummaryProvider="true"
+        android:key="textSize"
+        android:entryValues="@array/text_size_value"
+        android:title="@string/text_size_content"/>
     <SwitchPreference
-        android:title="Light/Dark"
-        android:key="key_change_theme"
+        android:icon="@drawable/night_mode"
+        android:title="@string/theme_mode"
+        android:key="configThemes"
+        app:useSimpleSummaryProvider="true"
         android:defaultValue="false"/>
     <ListPreference
-        android:defaultValue="2"
-        android:title="Select your language"
-        android:entries="@array/language"
-        android:key="key_change_language"
-        android:entryValues="@array/text_size_id"
-        android:dialogTitle="Change your language"
-        />
+        android:icon="@drawable/language"
+        android:defaultValue="@string/vietnamese_language"
+        android:title="@string/language_content"
+        android:entries="@array/app_Language"
+        android:key="configLanguage"
+        android:entryValues="@array/app_Language_values"
+        app:useSimpleSummaryProvider="true"
+        android:dialogTitle="@string/language_content" />
 </PreferenceScreen>

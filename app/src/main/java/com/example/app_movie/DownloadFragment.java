@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.os.ParcelFileDescriptor;
 import android.provider.MediaStore;
@@ -32,6 +33,7 @@ public class DownloadFragment extends Fragment implements DownloadAdapterFragmen
     DownloadAdapterFragment downloadAdapterFragment;
     ArrayList<FilmClass> filmClassArrayList;
     DBStorageDMovie sqLiteDatabase;
+    SwipeRefreshLayout pullToRefreshDownload;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -53,7 +55,6 @@ public class DownloadFragment extends Fragment implements DownloadAdapterFragmen
         new ItemTouchHelper(itemTouchHelperCallback).attachToRecyclerView(rcDownload);
         rcDownload.setAdapter(downloadAdapterFragment);
     }
-
     @Override
     public void onClickList(FilmClass filmClass) {
         Intent intent=new Intent(getActivity(),detail.class);
@@ -77,9 +78,6 @@ public class DownloadFragment extends Fragment implements DownloadAdapterFragmen
             Log.d("yo", "onSwiped: "+filmClassArrayList.get(i).name);
             filmClassArrayList.remove(viewHolder.getAdapterPosition());
             downloadAdapterFragment.notifyDataSetChanged();
-
-
-
         }
     };
 }

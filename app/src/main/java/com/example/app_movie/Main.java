@@ -4,8 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.preference.PreferenceManager;
+
 import java.io.File;
+
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.FileObserver;
 import android.util.Log;
@@ -22,6 +27,16 @@ public class Main extends AppCompatActivity {
     androidx.appcompat.widget.Toolbar toolbar;
     FirebaseAuth firebaseAuth;
     View view_item;
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(newBase);
+        String lang= sharedPreferences.getString("configLanguage", "vi");//load it from SharedPref
+        float f = Float.parseFloat(sharedPreferences.getString("textSize", "1.0f"));
+        Context context =ConfigSetting.configLang(newBase, lang,f);
+        super.attachBaseContext(context);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

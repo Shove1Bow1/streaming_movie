@@ -3,17 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="120dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginTop="5dp"
-    android:layout_marginRight="5dp"
-    android:layout_marginLeft="5dp"
-    app:cardCornerRadius="5dp"
     android:orientation="horizontal"
     android:id="@+id/itemDownload">
     <ImageView
         android:layout_width="100dp"
         android:layout_height="110dp"
         android:layout_gravity="start|center"
-        android:layout_marginLeft="2dp"
+        android:layout_marginLeft="2sp"
         android:id="@+id/imgView_itemDownload"/>
     <RelativeLayout
         android:layout_width="291dp"

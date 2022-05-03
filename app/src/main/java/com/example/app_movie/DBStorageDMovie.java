@@ -100,15 +100,12 @@ public class DBStorageDMovie {
        Cursor cursor=database.rawQuery(query,null,null);
        if(cursor!=null){
            Log.d("tag", "checkExistInDownloadFolder: "+name);
-
-
            while (cursor.moveToNext()){
                if(name.compareTo(cursor.getString(0))==0){
                    closeDB(database);
                    return true;
                }
            }
-
        }
        closeDB(database);
        return false;

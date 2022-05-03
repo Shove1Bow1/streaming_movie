@@ -14,7 +14,7 @@
         app:layout_constraintBottom_toTopOf="@+id/videoView_four_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/videoView_one_layout"></View>
+        app:layout_constraintTop_toBottomOf="@+id/videoView_one_layout"/>
 
     <LinearLayout
         android:id="@+id/videoView_one_layout"
@@ -50,7 +50,6 @@
             android:layout_weight="0"
             android:background="@android:color/transparent"
             android:src="@drawable/more" />
-
     </LinearLayout>
 
     <LinearLayout
