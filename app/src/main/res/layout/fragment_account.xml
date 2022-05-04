@@ -89,7 +89,7 @@
                 app:layout_constraintTop_toBottomOf="@id/imgSetAvatar"
                 tools:layout_editor_absoluteX="-7dp"
                 android:background="@drawable/botron_button"
-                ></FrameLayout>
+                />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnSignOut"

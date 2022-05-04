@@ -6,7 +6,11 @@
         android:icon="@drawable/ic_baseline_search_24"
         android:title="@string/app_name"
         android:iconTint="#ffffff"
+<<<<<<< HEAD
         app:iconTint="@color/background"
+=======
+        app:iconTint="@color/white"
+>>>>>>> 663f29ccd7a14ce2e463e464325fad37efe87499
         app:showAsAction="always"
         />
 </menu>

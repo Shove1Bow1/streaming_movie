@@ -7,6 +7,7 @@
     android:background="@drawable/background_login"
     tools:context=".AddUserInfo">
 
+<<<<<<< HEAD
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -46,10 +47,33 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="Age"
+=======
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="256dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="43dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+>>>>>>> 663f29ccd7a14ce2e463e464325fad37efe87499
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name" />
 
+<<<<<<< HEAD
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/sex"
         android:layout_width="333dp"
@@ -61,6 +85,16 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="Sex"
+=======
+    <EditText
+        android:id="@+id/sex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+>>>>>>> 663f29ccd7a14ce2e463e464325fad37efe87499
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/age" />
@@ -69,6 +103,7 @@
         android:id="@+id/button_add_infor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:backgroundTint="@color/rim"
         android:background="@drawable/botron_button"
         android:layout_marginTop="50dp"
@@ -81,4 +116,11 @@
         android:clickable="true"
         android:focusable="true"
         android:foreground="?attr/selectableItemBackgroundBorderless"/>/>
+=======
+        android:layout_marginTop="81dp"
+        android:text="ADD Infor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sex" />
+>>>>>>> 663f29ccd7a14ce2e463e464325fad37efe87499
 </androidx.constraintlayout.widget.ConstraintLayout>

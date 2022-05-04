@@ -4,19 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     tools:context=".EditInforActivity"
     android:background="@drawable/background_login">
+=======
+    tools:context=".EditInforActivity">
+>>>>>>> 663f29ccd7a14ce2e463e464325fad37efe87499
 
     <TextView
         android:id="@+id/tvEditInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_marginTop="120dp"
         android:background="@drawable/botron"
         android:text="EDIT INFO"
         android:textColor="@color/word"
         android:textStyle="bold"
         android:textSize="30sp"
+=======
+        android:text="EDIT INFO"
+        android:textSize="27sp"
+>>>>>>> 663f29ccd7a14ce2e463e464325fad37efe87499
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,11 +34,18 @@
         android:id="@id/tvUserName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_marginStart="25px"
         android:layout_marginTop="20px"
         android:text="User Name"
         android:textSize="22sp"
         android:textColor="@color/word"
+=======
+        android:layout_marginStart="5px"
+        android:layout_marginTop="20px"
+        android:text="User Age"
+        android:textSize="24sp"
+>>>>>>> 663f29ccd7a14ce2e463e464325fad37efe87499
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvEditInfo" />
 
@@ -37,11 +53,18 @@
         android:id="@id/tvUserAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_marginStart="25px"
         android:layout_marginTop="20px"
         android:text="User Age"
         android:textSize="22sp"
         android:textColor="@color/word"
+=======
+        android:layout_marginStart="5px"
+        android:layout_marginTop="20px"
+        android:text="User Age"
+        android:textSize="24sp"
+>>>>>>> 663f29ccd7a14ce2e463e464325fad37efe87499
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edUserName" />
 
@@ -49,32 +72,51 @@
         android:id="@id/tvUserSex"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_marginStart="25px"
         android:layout_marginTop="20px"
         android:text="User Sex"
         android:textSize="22sp"
         android:textColor="@color/word"
+=======
+        android:layout_marginStart="5px"
+        android:layout_marginTop="20px"
+        android:text="User Sex"
+        android:textSize="24sp"
+>>>>>>> 663f29ccd7a14ce2e463e464325fad37efe87499
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edUserAge" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnSave"
+<<<<<<< HEAD
         android:layout_width="150dp"
+=======
+        android:layout_width="wrap_content"
+>>>>>>> 663f29ccd7a14ce2e463e464325fad37efe87499
         android:layout_height="wrap_content"
         android:layout_marginTop="50px"
         android:text="Save"
         android:textAllCaps="false"
         android:textSize="24sp"
+<<<<<<< HEAD
         android:background="@drawable/botron_button"
+=======
+>>>>>>> 663f29ccd7a14ce2e463e464325fad37efe87499
         app:layout_constraintTop_toBottomOf="@id/edUserSex"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/btnCancel" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnCancel"
+<<<<<<< HEAD
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:background="@drawable/botron_button"
+=======
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+>>>>>>> 663f29ccd7a14ce2e463e464325fad37efe87499
         android:layout_marginTop="50px"
         android:text="Cancel"
         android:textAllCaps="false"
@@ -87,12 +129,17 @@
         android:id="@+id/edUserName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"
         android:background="@drawable/botron"
         android:layout_marginTop="10px"
         android:hint="Your user name"
         android:textColorHint="@color/divider"
+=======
+        android:layout_marginTop="10px"
+        android:hint="Your user name"
+>>>>>>> 663f29ccd7a14ce2e463e464325fad37efe87499
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvUserName" />
@@ -101,12 +148,17 @@
         android:id="@+id/edUserAge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"
         android:background="@drawable/botron"
         android:layout_marginTop="10px"
         android:hint="Your age"
         android:textColorHint="@color/divider"
+=======
+        android:layout_marginTop="10px"
+        android:hint="Your age"
+>>>>>>> 663f29ccd7a14ce2e463e464325fad37efe87499
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvUserAge" />
@@ -115,12 +167,17 @@
         android:id="@+id/edUserSex"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"
         android:background="@drawable/botron"
         android:layout_marginTop="10px"
         android:hint="Your user sex"
         android:textColorHint="@color/divider"
+=======
+        android:layout_marginTop="10px"
+        android:hint="Your user sex"
+>>>>>>> 663f29ccd7a14ce2e463e464325fad37efe87499
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvUserSex" />
