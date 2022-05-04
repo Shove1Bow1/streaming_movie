@@ -120,7 +120,7 @@
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:drawableTop="@drawable/ic_baseline_add_circle_outline_24"
-                android:text="add"
+                android:text="Download"
                 android:textColor="@color/word"/>
 
             <Button

@@ -4,13 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
     tools:context=".detail"
     android:background="@drawable/background_login">
-=======
-    tools:context=".detail">
->>>>>>> 663f29ccd7a14ce2e463e464325fad37efe87499
-
     <ImageView
         android:id="@+id/detail_poster"
         android:layout_width="200dp"
@@ -23,29 +18,21 @@
 
     <TextView
         android:id="@+id/detail_title"
-<<<<<<< HEAD
         android:layout_width="wrap_content"
-=======
-        android:layout_width="match_parent"
->>>>>>> 663f29ccd7a14ce2e463e464325fad37efe87499
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:gravity="center"
         android:maxLines="1"
         android:textSize="25dp"
-<<<<<<< HEAD
         android:textStyle="bold"
         android:textColor="@color/word"
         android:background="@drawable/botron"
-=======
->>>>>>> 663f29ccd7a14ce2e463e464325fad37efe87499
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/detail_poster" />
 
     <Button
         android:id="@+id/detail_play"
-<<<<<<< HEAD
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="80dp"
@@ -55,22 +42,11 @@
         android:text="Play"
         android:textColor="@color/word"
         android:textStyle="bold"
-=======
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="20dp"
-        android:background="@color/white"
-        android:drawableTop="@drawable/ic_baseline_play_arrow_24"
-        android:text="Play"
-        android:textColor="@color/black"
->>>>>>> 663f29ccd7a14ce2e463e464325fad37efe87499
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/detail_year" />
 
     <Button
         android:id="@+id/detail_download"
-<<<<<<< HEAD
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="64dp"
@@ -80,16 +56,6 @@
         android:text="Download"
         android:textColor="@color/word"
         android:textStyle="bold"
-=======
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="20dp"
-        android:background="@color/white"
-        android:drawableTop="@drawable/ic_baseline_download_24"
-        android:text="Download"
-        android:textColor="@color/black"
->>>>>>> 663f29ccd7a14ce2e463e464325fad37efe87499
         app:layout_constraintStart_toEndOf="@+id/detail_play"
         app:layout_constraintTop_toBottomOf="@+id/detail_year" />
 
@@ -98,15 +64,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-<<<<<<< HEAD
         android:layout_marginTop="14dp"
         android:text="Year release: 2022"
         android:textColor="@color/word"
         android:textStyle="italic"
-=======
-        android:layout_marginTop="12dp"
-        android:text="2022"
->>>>>>> 663f29ccd7a14ce2e463e464325fad37efe87499
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/detail_title" />
 
@@ -116,7 +77,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:layout_marginTop="12dp"
-        android:text=""
+        android:text="Hi"
         app:layout_constraintStart_toEndOf="@+id/detail_year"
         app:layout_constraintStart_toStartOf="@+id/detail_year"
         app:layout_constraintTop_toBottomOf="@+id/detail_title" />
@@ -126,11 +87,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="   Decription:"
-<<<<<<< HEAD
+        android:text="Decription:"
         android:textColor="@color/word"
-=======
->>>>>>> 663f29ccd7a14ce2e463e464325fad37efe87499
         app:layout_constraintTop_toBottomOf="@+id/detail_play"
         tools:layout_editor_absoluteX="0dp" />
 
@@ -140,10 +98,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="13dp"
         android:text="   Actor:"
-<<<<<<< HEAD
         android:textColor="@color/word"
-=======
->>>>>>> 663f29ccd7a14ce2e463e464325fad37efe87499
         app:layout_constraintTop_toBottomOf="@+id/detail_decription"
         tools:layout_editor_absoluteX="-16dp" />
 
@@ -153,10 +108,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="    Director:"
-<<<<<<< HEAD
         android:textColor="@color/word"
-=======
->>>>>>> 663f29ccd7a14ce2e463e464325fad37efe87499
         app:layout_constraintTop_toBottomOf="@+id/detail_gerne"
         tools:layout_editor_absoluteX="0dp" />
 
@@ -165,11 +117,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="13dp"
-        android:text="   Gerne:"
-<<<<<<< HEAD
+        android:text="Gerne:"
         android:textColor="@color/word"
-=======
->>>>>>> 663f29ccd7a14ce2e463e464325fad37efe87499
         app:layout_constraintTop_toBottomOf="@+id/detail_actor"
         tools:layout_editor_absoluteX="-16dp" />
 
