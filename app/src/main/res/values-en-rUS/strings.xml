@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">App_Movie</string>
+    <string name="login_screen_logo">Login</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="long_text">thor 2 full movie download in hindi 720p thor 2 full movie download in hindi 720p thor 2 full movie download in hindi 720p thor 2 full movie download in hindi 720p</string>
+    <string name="audio_sub">"Audio &amp; Subtitle "</string>
+    <string name="lock">Lock</string>
+    <string name="speed_1x">Speed(1x)</string>
+    <string name="rotate">Rotate</string>
+    <string name="tap_to_unlock">Tap to Unlock</string>
+    <string name="screen_locked">Screen Locked</string>
+    <string name="unlock_controls">Unlock Controls?</string>
+    <string name="folder_name">Folder Name</string>
+    <string name="_10_videos">10 videos</string>
+    <string name="_1_00gb">1.00Gb</string>
+    <string name="_00_00_00">00:00:00</string>
+    <string name="search">Search file name</string>
+    <string name="small_font">Small</string>
+    <string name="medium_font">Medium</string>
+    <string name="large_font">Large</string>
+    <string name="english_language">English</string>
+    <string name="vietnamese_language">VietNamese</string>
+    <string name="movie_content">Plot</string>
+    <string name="movie_title">Name</string>
+    <string name="movie_genre">Genre</string>
+    <string name="movie_cast">Cast</string>
+    <string name="movie_director">Director</string>
+    <string name="download_movie">Download</string>
+    <string name="watch_movie">Watch</string>
+    <string name="log_out">Logout</string>
+    <string name="log_in">Login</string>
+    <string name="register">Register</string>
+    <string name="theme_mode">Light/Night</string>
+    <string name="text_size_content">Change Font Size</string>
+    <string name="language_content">"Change Language "</string>
+    <string name="year_public">Public year</string>
+    <string name="hot_list">Significant movie</string>
+    <string name="logout">Sign out</string>
+    <string name="change_info_account">Edit info</string>
+</resources>

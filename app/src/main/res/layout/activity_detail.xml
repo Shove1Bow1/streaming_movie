@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".detail"
+    android:background="@drawable/background_login">
+
+    <ImageView
+        android:id="@+id/detail_poster"
+        android:layout_width="200dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/detail_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textColor="@color/word"
+        android:background="@drawable/botron"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detail_poster" />
+
+    <Button
+        android:id="@+id/detail_play"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/botron_button"
+        android:drawableTop="@drawable/ic_baseline_play_arrow_24"
+        android:text="Play"
+        android:textColor="@color/word"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detail_year" />
+
+    <Button
+        android:id="@+id/detail_download"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/botron_button"
+        android:drawableTop="@drawable/ic_baseline_download_24"
+        android:text="Download"
+        android:textColor="@color/word"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/detail_play"
+        app:layout_constraintTop_toBottomOf="@+id/detail_year" />
+
+    <TextView
+        android:id="@+id/detail_year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="14dp"
+        android:text="Year release: 2022"
+        android:textColor="@color/word"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detail_title" />
+
+    <TextView
+        android:id="@+id/detail_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="12dp"
+        android:text=""
+        app:layout_constraintStart_toEndOf="@+id/detail_year"
+        app:layout_constraintStart_toStartOf="@+id/detail_year"
+        app:layout_constraintTop_toBottomOf="@+id/detail_title" />
+
+    <TextView
+        android:id="@+id/detail_decription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="   Decription:"
+        android:textColor="@color/word"
+        app:layout_constraintTop_toBottomOf="@+id/detail_play"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/detail_actor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:text="   Actor:"
+        android:textColor="@color/word"
+        app:layout_constraintTop_toBottomOf="@+id/detail_decription"
+        tools:layout_editor_absoluteX="-16dp" />
+
+    <TextView
+        android:id="@+id/detail_director"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="    Director:"
+        android:textColor="@color/word"
+        app:layout_constraintTop_toBottomOf="@+id/detail_gerne"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/detail_gerne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:text="   Gerne:"
+        android:textColor="@color/word"
+        app:layout_constraintTop_toBottomOf="@+id/detail_actor"
+        tools:layout_editor_absoluteX="-16dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
