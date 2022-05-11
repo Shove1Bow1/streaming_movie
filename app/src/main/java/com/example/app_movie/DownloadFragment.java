@@ -54,6 +54,13 @@ public class DownloadFragment extends Fragment implements DownloadAdapterFragmen
         rcDownload.setLayoutManager(linearLayout);
         new ItemTouchHelper(itemTouchHelperCallback).attachToRecyclerView(rcDownload);
         rcDownload.setAdapter(downloadAdapterFragment);
+        pullToRefreshDownload=view.findViewById(R.id.pullToRefreshDownload);
+        pullToRefreshDownload.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                downloadAdapterFragment.notifyDataSetChanged();
+            }
+        });
     }
     @Override
     public void onClickList(FilmClass filmClass) {

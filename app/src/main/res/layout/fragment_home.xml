@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     tools:context=".HomeFragment">
-
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
@@ -119,23 +118,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@null"
-                android:drawableTop="@drawable/ic_baseline_add_circle_outline_24"
-                android:text="Download"
+                android:drawableTop="@drawable/ic_cloud_download_black"
+                android:text="@string/download"
                 android:textColor="@color/word"/>
-
             <Button
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:background="@drawable/botron"
                 android:drawableTop="@drawable/ic_baseline_play_arrow_24"
-                android:text="Play"
+                android:text="@string/play_movie"
                 android:textColor="@color/word"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:drawableTop="@drawable/ic_baseline_info_24"
-                android:text="Info"
+                android:text="@string/movie_content"
                 android:textColor="@color/word"/>
         </LinearLayout>
 

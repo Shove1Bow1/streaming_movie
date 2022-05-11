@@ -25,6 +25,25 @@
     <string name="language_content">Thay đổi ngôn ngữ</string>
     <string name="logout">Đăng xuất</string>
     <string name="change_info_account">Chỉnh sửa thông tin</string>
+    <string name="play_movie">Xem Phim</string>
+    <string name="password">Mật khẩu</string>
+    <string name="login_with_google_account">Đăng nhập bằng Google</string>
+    <string name="login_with_phone_number">Đăng nhập bằng Số Điện Thoại</string>
+    <string name="no_account">Chưa Có Tài Khoản?</string>
+    <string name="edit_info">Đổi thông tin</string>
+    <string name="home">Trang chủ</string>
+    <string name="download">Tải Phim</string>
+    <string name="Account">Tài khoản</string>
+    <string name="password_confirm">Nhập lại mật khẩu</string>
+    <string name="register_account">Đăng ký tài khoản</string>
+    <string name="user_name">Tên tài khoản:</string>
+    <string name="user_age">Tuổi</string>
+    <string name="user_sex">Giới tính</string>
+    <string name="save_info">Lưu thay đổi</string>
+    <string name="cancel_edit">Huỷ thay đổi</string>
+    <string name="your_name">Tên của bạn</string>
+    <string name="your_age">Tuổi của bạn</string>
+    <string name="your_gender">Giới tính của bạn</string>
     <string-array name="thể_loại">
         <item>Hài</item>
         <item>Kinh dỊ</item>

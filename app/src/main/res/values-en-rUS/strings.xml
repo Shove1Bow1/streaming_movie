@@ -38,4 +38,23 @@
     <string name="hot_list">Significant movie</string>
     <string name="logout">Sign out</string>
     <string name="change_info_account">Edit info</string>
+    <string name="play_movie">Play</string>
+    <string name="password">Password</string>
+    <string name="login_with_google_account">SIGN IN WITH GOOGLE</string>
+    <string name="login_with_phone_number">SIGN IN WITH PHONE</string>
+    <string name="no_account">Don\'t have account yet?</string>
+    <string name="edit_info">Edit Account Info</string>
+    <string name="home">Home</string>
+    <string name="download">Download</string>
+    <string name="Account">Account</string>
+    <string name="password_confirm">Confirm password</string>
+    <string name="register_account">Register Account</string>
+    <string name="user_name">User name:</string>
+    <string name="user_age">User Age:</string>
+    <string name="user_sex">User Gender:</string>
+    <string name="save_info">Save Info</string>
+    <string name="cancel_edit">Cancel Edit</string>
+    <string name="your_name">Your name</string>
+    <string name="your_age">Your age</string>
+    <string name="your_gender">Your gender</string>
 </resources>

@@ -38,7 +38,7 @@
         android:layout_height="51dp"
         android:layout_marginTop="30dp"
         android:background="@drawable/botron"
-        android:hint="Password"
+        android:hint="@string/password"
         android:paddingLeft="15dp"
         android:textColor="@color/black"
         android:inputType="textPassword"
@@ -64,7 +64,7 @@
             android:layout_height="match_parent"
             android:backgroundTint="@color/rim"
             android:background="@drawable/botron"
-            android:text="Login"
+            android:text="@string/log_in"
             android:textStyle="normal"
             android:textSize="20dp"
             android:clickable="true"
@@ -91,7 +91,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginTop="16dp"
-        android:text="Sign up"
+        android:text="Register"
         android:textColor="@color/word_button"
         android:textSize="20dp"
         app:layout_constraintStart_toEndOf="@+id/textView2"
@@ -103,7 +103,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="230dp"
-        android:layout_height="45dp"
+        android:layout_height="50dp"
         android:layout_marginTop="68dp"
         android:id="@+id/cvGoogleLogin"
         android:background="@color/white"
@@ -143,7 +143,7 @@
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
         android:layout_width="230dp"
-        android:layout_height="45dp"
+        android:layout_height="50dp"
         android:layout_marginTop="15dp"
         android:id="@+id/cvPhoneLogin"
         android:background="@color/white"

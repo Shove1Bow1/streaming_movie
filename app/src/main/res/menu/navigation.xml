@@ -2,12 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/home_navigation"
         android:icon="@drawable/ic_baseline_home_24"
-        android:title="Hone"/>
+        android:title="@string/home"/>
     <item android:id="@+id/download_navigation"
         android:icon="@drawable/ic_baseline_cloud_download_24"
-        android:title="Download"/>
+        android:title="@string/download"/>
     <item android:id="@+id/setings_navigation"
         android:icon="@drawable/ic_baseline_view_headline_24"
-        android:title="Settings"/>
+        android:title="@string/Account"/>
 
 </menu>
