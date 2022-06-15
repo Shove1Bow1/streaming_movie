@@ -31,7 +31,7 @@
     <string name="log_out">Logout</string>
     <string name="log_in">Login</string>
     <string name="register">Register</string>
-    <string name="theme_mode">Light/Night</string>
+    <string name="theme_mode_light">Light</string>
     <string name="text_size_content">Change Font Size</string>
     <string name="language_content">"Change Language "</string>
     <string name="year_public">Public year</string>
@@ -57,4 +57,6 @@
     <string name="your_name">Your name</string>
     <string name="your_age">Your age</string>
     <string name="your_gender">Your gender</string>
+    <string name="theme_mode_night">Night</string>
+    <string name="theme_mode_title">Change theme mode</string>
 </resources>

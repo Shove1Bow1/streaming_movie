@@ -20,7 +20,8 @@
     <string name="log_out">Đăng xuất</string>
     <string name="log_in">Đăng nhập</string>
     <string name="register">Đăng ký</string>
-    <string name="theme_mode">Sáng/Tối</string>
+    <string name="theme_mode_light">Sáng</string>
+    <string name="theme_mode_night">Tối</string>
     <string name="text_size_content">Thay đổi cỡ chữ</string>
     <string name="language_content">Thay đổi ngôn ngữ</string>
     <string name="logout">Đăng xuất</string>
@@ -31,6 +32,7 @@
     <string name="login_with_phone_number">Đăng nhập bằng Số Điện Thoại</string>
     <string name="no_account">Chưa Có Tài Khoản?</string>
     <string name="edit_info">Đổi thông tin</string>
+    <string name="theme_mode_title">Đổi giao diện</string>
     <string name="home">Trang chủ</string>
     <string name="download">Tải Phim</string>
     <string name="Account">Tài khoản</string>
@@ -68,6 +70,10 @@
     <string-array name="app_Language">
         <item>@string/vietnamese_language</item>
         <item>@string/english_language</item>
+    </string-array>
+    <string-array name="theme_mode_value">
+        <item>@string/theme_mode_light</item>
+        <item>@string/theme_mode_night</item>
     </string-array>
     <string-array name="app_Language_values">
         <item>VI</item>
