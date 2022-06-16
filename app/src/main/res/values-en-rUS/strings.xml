@@ -59,4 +59,7 @@
     <string name="your_gender">Your gender</string>
     <string name="theme_mode_night">Night</string>
     <string name="theme_mode_title">Change theme mode</string>
+    <string name="login_problem">You need to login first</string>
+    <string name="login_checking">You need to log in first</string>
+    <string name="checking_download_file">This movie has been downloaded</string>
 </resources>

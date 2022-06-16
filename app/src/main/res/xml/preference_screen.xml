@@ -28,5 +28,6 @@
         android:key="configLanguage"
         android:entryValues="@array/app_Language_values"
         app:useSimpleSummaryProvider="true"
-        android:dialogTitle="@string/language_content" />
-</PreferenceScreen>`
+        android:dialogTitle="@string/language_content"
+        />
+</PreferenceScreen>

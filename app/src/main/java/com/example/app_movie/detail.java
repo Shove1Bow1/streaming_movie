@@ -24,6 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class detail extends AppCompatActivity {
     private static final int PERMISSION_STORAGE_CODE =1000 ;
@@ -33,6 +34,7 @@ public class detail extends AppCompatActivity {
     FilmClass filmClass;
     DBStorageDMovie sqLiteDatabase;
     File fileUriImg,fileUriVideo,UriLocal;
+    FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,20 +65,24 @@ public class detail extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        download.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
-                    if(checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)== PackageManager.PERMISSION_DENIED){
-                        String[] permissions={Manifest.permission.WRITE_EXTERNAL_STORAGE};
-                        requestPermissions(permissions,PERMISSION_STORAGE_CODE);
-                    }
-                    else{
-                            startDownloading(filmClass.getUrlfilm(),filmClass.getUrl_img());
+        if(firebaseAuth.getCurrentUser()!=null) {
+            download.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                        if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
+                            String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
+                            requestPermissions(permissions, PERMISSION_STORAGE_CODE);
+                        } else {
+                            startDownloading(filmClass.getUrlfilm(), filmClass.getUrl_img());
+                        }
                     }
                 }
-            }
-        });
+            });
+        }
+        else {
+            Toast.makeText(this,R.string.login_checking,Toast.LENGTH_SHORT).show();
+        }
     }
     @RequiresApi(api = Build.VERSION_CODES.R)
     private void startDownloading(String Url, String Url_Image){
@@ -113,7 +119,7 @@ public class detail extends AppCompatActivity {
             sqLiteDatabase.insertDownloadInfo(filmClass,fileUriImg,fileUriVideo,UriLocal);
         }
         else{
-            Toast.makeText(detail.this,"This movie has been downloaded",Toast.LENGTH_SHORT).show();
+            Toast.makeText(detail.this,R.string.checking_download_file,Toast.LENGTH_SHORT).show();
         }
 
     }

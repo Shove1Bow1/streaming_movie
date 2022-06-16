@@ -46,6 +46,9 @@
     <string name="your_name">Tên của bạn</string>
     <string name="your_age">Tuổi của bạn</string>
     <string name="your_gender">Giới tính của bạn</string>
+    <string name="login_problem">Bạn cần phải đăng nhập</string>
+    <string name="login_checking">Bạn cần phải đăng nhập mới sử dụng được tính năng này</string>
+    <string name="checking_download_file">Phim này đã được tải</string>
     <string-array name="thể_loại">
         <item>Hài</item>
         <item>Kinh dỊ</item>

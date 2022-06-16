@@ -92,7 +92,7 @@
                 />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnSignOut"
+                android:id="@+id/btnLogInSetting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/botron_button"
@@ -100,12 +100,12 @@
                 android:text="@string/log_out"
                 android:textAllCaps="false"
                 android:textSize="20sp"
-                app:layout_constraintLeft_toRightOf="@id/btnEditInfo"
+                app:layout_constraintLeft_toRightOf="@id/btnRegisterSetting"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/frameSetting" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnEditInfo"
+                android:id="@+id/btnRegisterSetting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -114,7 +114,7 @@
                 android:textSize="20sp"
                 android:background="@drawable/botron_button"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toLeftOf="@id/btnSignOut"
+                app:layout_constraintRight_toLeftOf="@id/btnLogInSetting"
                 app:layout_constraintTop_toBottomOf="@id/frameSetting" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

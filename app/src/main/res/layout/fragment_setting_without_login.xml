@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/frameSetting"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="204dp"
+            android:background="@drawable/botron_button"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnLogInSetting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/botron_button"
+            android:layout_marginTop="20dp"
+            android:text="@string/log_in"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toRightOf="@id/btnRegisterSetting"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/frameSetting" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnRegisterSetting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/register"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:background="@drawable/botron_button"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/btnLogInSetting"
+            app:layout_constraintTop_toBottomOf="@id/frameSetting" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

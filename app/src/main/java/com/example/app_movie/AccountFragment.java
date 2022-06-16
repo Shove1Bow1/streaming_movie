@@ -5,7 +5,6 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
@@ -33,11 +32,11 @@ public class AccountFragment extends PreferenceFragmentCompat{
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         pullToRefreshInfo=view.findViewById(R.id.pullToRefreshInfo);
-        btnSignOut=view.findViewById(R.id.btnSignOut);
+        btnSignOut=view.findViewById(R.id.btnLogInSetting);
         tvUserSex=view.findViewById(R.id.tvUserSex);
         tvUserAge=view.findViewById(R.id.tvUserAge);
         tvUserName=view.findViewById(R.id.tvUserName);
-        btnEditInfo=view.findViewById(R.id.btnEditInfo);
+        btnEditInfo=view.findViewById(R.id.btnRegisterSetting);
         firebaseFirestore=FirebaseFirestore.getInstance();
         fetchUserData();
         pullToRefreshInfo.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {

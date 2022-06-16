@@ -6,18 +6,14 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.preference.PreferenceManager;
 
-import java.io.File;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.FileObserver;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -65,12 +61,22 @@ public class Main extends AppCompatActivity {
                     loadFragment(fragment);
                     return true;
                 case R.id.download_navigation:
-                    fragment=new DownloadFragment();
+                    if (firebaseAuth.getCurrentUser()!=null){
+                       fragment=new DownloadWithoutLoginFragment();
+                    }
+                    else {
+                        fragment=new DownloadFragment();
+                    }
                     Log.e("Check",""+fragment.toString());
                     loadFragment(fragment);
                     return true;
                 case R.id.setings_navigation:
-                    fragment=new AccountFragment();
+                    if (firebaseAuth.getCurrentUser()!=null){
+                        fragment=new SettingWithoutLoginFragment();
+                    }
+                    else {
+                        fragment=new AccountFragment();
+                    }
                     Log.e("Check",""+fragment.toString());
                     loadFragment(fragment);
                     return true;
